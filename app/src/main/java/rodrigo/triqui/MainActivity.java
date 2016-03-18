@@ -2,12 +2,14 @@ package rodrigo.triqui;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.View.OnClickListener;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements OnClickListener {
     int[] tablero = new int[9];
@@ -49,50 +51,133 @@ public class MainActivity extends Activity implements OnClickListener {
             case R.id.uno:
                 uno.setImageResource(R.drawable.x);
                 tablero[0]=1;
+                verificar();
                 break;
 
             case R.id.dos:
                 dos.setImageResource(R.drawable.x);
                 tablero[1]=1;
+                verificar();
                 break;
 
             case R.id.tres:
                 tres.setImageResource(R.drawable.x);
                 tablero[2]=1;
+                verificar();
                 break;
 
             case R.id.cuatro:
                 cuatro.setImageResource(R.drawable.x);
                 tablero[3]=1;
+                verificar();
                 break;
 
             case R.id.cinco:
                 cinco.setImageResource(R.drawable.x);
                 tablero[4]=1;
+                verificar();
                 break;
 
             case R.id.seis:
                 seis.setImageResource(R.drawable.x);
                 tablero[5]=1;
+                verificar();
                 break;
 
             case R.id.siete:
                 siete.setImageResource(R.drawable.x);
                 tablero[6]=1;
+                verificar();
                 break;
 
             case R.id.ocho:
                 ocho.setImageResource(R.drawable.x);
                 tablero[7]=1;
+                verificar();
                 break;
 
             case R.id.nueve:
                 nueve.setImageResource(R.drawable.x);
                 tablero[8]=1;
+                verificar();
                 break;
 
             default:
                 break;
+        }
+    }
+
+    public void insertar(){
+        boolean poner = true;
+        int ran=(int)(8*Math.random())+1;
+
+        
+    }
+
+    public void verificar (){
+        if(tablero[0]==1){
+            if(tablero[1]==1){
+                if(tablero[2]==1){
+                    gana=true;
+                }
+            }
+        }
+        if(tablero[3]==1){
+            if(tablero[4]==1){
+                if(tablero[5]==1){
+                    gana=true;
+                }
+            }
+        }
+        if(tablero[6]==1){
+            if(tablero[7]==1){
+                if(tablero[8]==1){
+                    gana=true;
+                }
+            }
+        }
+        if(tablero[0]==1){
+            if(tablero[3]==1){
+                if(tablero[6]==1){
+                    gana=true;
+                }
+            }
+        }
+        if(tablero[1]==1){
+            if(tablero[4]==1){
+                if(tablero[7]==1){
+                    gana=true;
+                }
+            }
+        }
+        if(tablero[2]==1){
+            if(tablero[5]==1){
+                if(tablero[8]==1){
+                    gana=true;
+                }
+            }
+        }
+        if(tablero[0]==1){
+            if(tablero[4]==1){
+                if(tablero[8]==1){
+                    gana=true;
+                }
+            }
+        }
+        if(tablero[2]==1){
+            if(tablero[4]==1){
+                if(tablero[6]==1){
+                    gana=true;
+                }
+            }
+        }
+        if(gana==true){
+            Toast toast = Toast.makeText(this, "El jugador X es el ganador", Toast.LENGTH_LONG);
+            toast.show();
+            Intent intent= new Intent();
+            intent.setClass(MainActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 }
