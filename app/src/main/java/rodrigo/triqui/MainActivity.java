@@ -182,12 +182,9 @@ public class MainActivity extends Activity implements OnClickListener {
 
                     gana=true;
         }
-        if(tablero[1]==1){
-            if(tablero[4]==1){
-                if(tablero[7]==1){
+        if(tablero[1]==1 || tablero[4]==1 || tablero[7]==1){
+
                     gana=true;
-                }
-            }
         }
         if(tablero[2]==1 || tablero[5]==1 || tablero[8]==1){
                     gana=true;
