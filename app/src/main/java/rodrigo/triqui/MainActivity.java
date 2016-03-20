@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity implements OnClickListener {
     int[] tablero = new int[9];
     ImageView uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve;
-    boolean gana;
+    boolean gana, ganao, poner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,43 +105,82 @@ public class MainActivity extends Activity implements OnClickListener {
             default:
                 break;
         }
+        insertar();
     }
 
     public void insertar(){
-        boolean poner = true;
+        poner = true;
         int ran=(int)(8*Math.random())+1;
 
-        
+        while(poner){
+            if (tablero[ran]==2 || tablero[ran]==1){
+                ran=ran+1;
+                if (ran==9){
+                    ran=0;
+                }
+                else{
+                    if (tablero[ran]==0){
+                        poner=false;
+                    }else{
+                        poner=true;
+                    }
+                    }
+                }
+        }
+        switch (ran){
+            case 0:
+                uno.setImageResource(R.drawable.o);
+                tablero[2]=2;
+                break;
+            case 1:
+                dos.setImageResource(R.drawable.o);
+                tablero[2]=2;
+                break;
+            case 2:
+                tres.setImageResource(R.drawable.o);
+                tablero[2]=2;
+                break;
+            case 3:
+                cuatro.setImageResource(R.drawable.o);
+                tablero[3]=2;
+                break;
+            case 4:
+                cinco.setImageResource(R.drawable.o);
+                tablero[4]=2;
+                break;
+            case 5:
+                seis.setImageResource(R.drawable.o);
+                tablero[5]=2;
+                break;
+            case 6:
+                siete.setImageResource(R.drawable.o);
+                tablero[6]=2;
+                break;
+            case 7:
+                ocho.setImageResource(R.drawable.o);
+                tablero[7]=2;
+                break;
+            case 8:
+                nueve.setImageResource(R.drawable.o);
+                tablero[8]=2;
+                break;
+        }
     }
 
     public void verificar (){
-        if(tablero[0]==1){
-            if(tablero[1]==1){
-                if(tablero[2]==1){
+        if(tablero[0]==1 || tablero[1]==1 || tablero[2]==1){
                     gana=true;
-                }
-            }
         }
-        if(tablero[3]==1){
-            if(tablero[4]==1){
-                if(tablero[5]==1){
+        if(tablero[3]==1 || tablero[4]==1 || tablero[5]==1){
                     gana=true;
-                }
-            }
         }
-        if(tablero[6]==1){
-            if(tablero[7]==1){
-                if(tablero[8]==1){
+        if(tablero[6]==1 || tablero[7]==1 || tablero[8]==1){
+
                     gana=true;
-                }
-            }
         }
-        if(tablero[0]==1){
-            if(tablero[3]==1){
-                if(tablero[6]==1){
+        if(tablero[0]==1 || tablero[3]==1 || tablero[6]==1){
+
                     gana=true;
-                }
-            }
         }
         if(tablero[1]==1){
             if(tablero[4]==1){
@@ -150,26 +189,15 @@ public class MainActivity extends Activity implements OnClickListener {
                 }
             }
         }
-        if(tablero[2]==1){
-            if(tablero[5]==1){
-                if(tablero[8]==1){
+        if(tablero[2]==1 || tablero[5]==1 || tablero[8]==1){
                     gana=true;
-                }
-            }
         }
-        if(tablero[0]==1){
-            if(tablero[4]==1){
-                if(tablero[8]==1){
+        if(tablero[0]==1 || tablero[4]==1 || tablero[8]==1){
                     gana=true;
-                }
-            }
         }
-        if(tablero[2]==1){
-            if(tablero[4]==1){
-                if(tablero[6]==1){
+        if(tablero[2]==1 || tablero[4]==1 || tablero[6]==1){
                     gana=true;
-                }
-            }
+
         }
         if(gana==true){
             Toast toast = Toast.makeText(this, "El jugador X es el ganador", Toast.LENGTH_LONG);
@@ -180,6 +208,70 @@ public class MainActivity extends Activity implements OnClickListener {
             finish();
         }
     }
+    public void verificaro(){
+        if(tablero[0]==2){
+            if(tablero[1]==2){
+                if(tablero[2]==2){
+                    ganao=true;
+                }
+            }
+        }
+        if(tablero[3]==2){
+            if(tablero[4]==2){
+                if(tablero[5]==2){
+                    ganao=true;
+                }
+            }
+        }
+        if(tablero[6]==2){
+            if(tablero[7]==2){
+                if(tablero[8]==2){
+                    ganao=true;
+                }
+            }
+        }
+        if(tablero[0]==2){
+            if(tablero[3]==2){
+                if(tablero[6]==2){
+                    ganao=true;
+                }
+            }
+        }
+        if(tablero[1]==2){
+            if(tablero[4]==2){
+                if(tablero[7]==2){
+                    ganao=true;
+                }
+            }
+        }
+        if(tablero[2]==2){
+            if(tablero[5]==2){
+                if(tablero[8]==2){
+                    ganao=true;
+                }
+            }
+        }
+        if(tablero[0]==2){
+            if(tablero[4]==2){
+                if(tablero[8]==2){
+                    ganao=true;
+                }
+            }
+        }
+        if(tablero[2]==2){
+            if(tablero[4]==2){
+                if(tablero[6]==2){
+                    ganao=true;
+                }
+            }
+        }
+        if(ganao==true){
+            Toast toast = Toast.makeText(this, "El jugador O es el ganador", Toast.LENGTH_LONG);
+            toast.show();
+            Intent intent= new Intent();
+            intent.setClass(MainActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
 }
-
-

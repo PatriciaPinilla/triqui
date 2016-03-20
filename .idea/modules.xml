@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/triqui-master.iml" filepath="$PROJECT_DIR$/triqui-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/triqui.iml" filepath="$PROJECT_DIR$/triqui.iml" />
     </modules>
   </component>
 </project>
