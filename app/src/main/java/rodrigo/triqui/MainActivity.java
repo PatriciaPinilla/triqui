@@ -52,54 +52,63 @@ public class MainActivity extends Activity implements OnClickListener {
                 uno.setImageResource(R.drawable.x);
                 tablero[0]=1;
                 verificar();
+                verificaro();
                 break;
 
             case R.id.dos:
                 dos.setImageResource(R.drawable.x);
                 tablero[1]=1;
                 verificar();
+                verificaro();
                 break;
 
             case R.id.tres:
                 tres.setImageResource(R.drawable.x);
                 tablero[2]=1;
                 verificar();
+                verificaro();
                 break;
 
             case R.id.cuatro:
                 cuatro.setImageResource(R.drawable.x);
                 tablero[3]=1;
                 verificar();
+                verificaro();
                 break;
 
             case R.id.cinco:
                 cinco.setImageResource(R.drawable.x);
                 tablero[4]=1;
                 verificar();
+                verificaro();
                 break;
 
             case R.id.seis:
                 seis.setImageResource(R.drawable.x);
                 tablero[5]=1;
                 verificar();
+                verificaro();
                 break;
 
             case R.id.siete:
                 siete.setImageResource(R.drawable.x);
                 tablero[6]=1;
                 verificar();
+                verificaro();
                 break;
 
             case R.id.ocho:
                 ocho.setImageResource(R.drawable.x);
                 tablero[7]=1;
                 verificar();
+                verificaro();
                 break;
 
             case R.id.nueve:
                 nueve.setImageResource(R.drawable.x);
                 tablero[8]=1;
                 verificar();
+                verificaro();
                 break;
 
             default:
@@ -131,38 +140,56 @@ public class MainActivity extends Activity implements OnClickListener {
             case 0:
                 uno.setImageResource(R.drawable.o);
                 tablero[2]=2;
+                verificaro();
+                verificar();
                 break;
             case 1:
                 dos.setImageResource(R.drawable.o);
                 tablero[2]=2;
+                verificaro();
+                verificar();
                 break;
             case 2:
                 tres.setImageResource(R.drawable.o);
                 tablero[2]=2;
+                verificaro();
+                verificar();
                 break;
             case 3:
                 cuatro.setImageResource(R.drawable.o);
                 tablero[3]=2;
+                verificaro();
+                verificar();
                 break;
             case 4:
                 cinco.setImageResource(R.drawable.o);
                 tablero[4]=2;
+                verificaro();
+                verificar();
                 break;
             case 5:
                 seis.setImageResource(R.drawable.o);
                 tablero[5]=2;
+                verificaro();
+                verificar();
                 break;
             case 6:
                 siete.setImageResource(R.drawable.o);
                 tablero[6]=2;
+                verificaro();
+                verificar();
                 break;
             case 7:
                 ocho.setImageResource(R.drawable.o);
                 tablero[7]=2;
+                verificaro();
+                verificar();
                 break;
             case 8:
                 nueve.setImageResource(R.drawable.o);
                 tablero[8]=2;
+                verificaro();
+                verificar();
                 break;
         }
     }
